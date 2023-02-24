@@ -1,0 +1,48 @@
+@mixin heart-wrapper {
+
+    cursor: pointer;
+
+}
+
+@mixin heart {
+    @include heart-wrapper();
+
+    .fa.fa-heart-o,
+    .fa.fa-heart {
+        font-size: $base-font-size * 2;
+        color: $heart-color;
+    }
+}
+
+@mixin inner_template {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+}
+
+@mixin ring_bf_aft {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border: solid 5px transparent;
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+}
+
+@mixin ring {
+    height: $base-font-size * 2;
+    width: $base-font-size * 2;
+    border: solid 5px rgb(214, 214, 214);
+    background: transparent;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    color: white;
+    font-size: $base-font-size;
+    transform: rotate(45deg);
+    justify-self: end;
+    margin-right: $base-font-size * 2.5;
+    margin-top: $base-font-size;
+    // transition: transform 1s linear;
+}
